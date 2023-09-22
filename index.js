@@ -7,18 +7,16 @@ const methodOverride = require("method-override");
 const router = express.Router();
 app.set("view engine", "ejs");
 app.set('views', './views');
+//
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 app.use(express.static('./public'))
 
-//app.get('/home', (req, res) => {
-//  res.status(200).json('Welcome, your app is working well');
-//})
+app.get('/home', (req, res) => {
+  //res.status(200).json('Welcome, your app is working well');
+  res.render("new")
+})
 
-//router.post('/', (request, response) => {
-//  response.json(request.body);
-//})
-//
 app.get("/pessoas/new", (req, res) => {
   res.redirect("new")
 })
@@ -26,6 +24,12 @@ app.get("/pessoas/new", (req, res) => {
 app.get("/", (req, res) => {
   res.redirect("/pessoas")
 })
+
+
+//router.post('/', (request, response) => {
+//  response.json(request.body);
+//})
+//
 
 // Export the Express API
 //module.exports = app
