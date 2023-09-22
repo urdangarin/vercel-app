@@ -14,7 +14,7 @@ app.use(express.static('./public'))
 
 app.get('/home', (req, res) => {
   //res.status(200).json('Welcome, your app is working well');
-  res.render("new")
+  res.render("./new")
 })
 
 app.get("/pessoas/new", (req, res) => {
