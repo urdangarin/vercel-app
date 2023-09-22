@@ -20,7 +20,7 @@ app.use(express.static('./public'))
 //})
 //
 app.get("/pessoas/new", (req, res) => {
-  res.render("new")
+  res.redirect("new")
 })
 
 app.get("/", (req, res) => {
